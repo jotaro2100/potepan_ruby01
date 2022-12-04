@@ -9,6 +9,9 @@ if memo_type == 1
   if File.exist?("#{file_name}.csv")
     puts "ファイルが既に存在しています"
     return
+  elsif file_name == ""
+    puts "ファイル名が空です"
+    return
   else
     CSV.open("#{file_name}.csv", "w") do |csv|
       puts "メモしたい内容を入力（Ctrl + D で保存）"
